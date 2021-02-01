@@ -1,24 +1,17 @@
 <template>
     <v-card class="d-flex flex-column" elevation="4" color="light-green lighten-2" min-height="100%">
         <v-row class="no-gutters flex-grow-1 d-flex flex-row flex-sm-column justify-space-between">
-            <v-col
-                class="flex-grow-1 d-flex flex-column img-flex"
-                cols="6"
-                sm="12"
-                order-sm="1"
-                :order="reverse ? 2 : 1"
-            >
+            <v-col class="img-flex d-flex flex-column" cols="6" sm="12" order-sm="1" :order="reverse ? 2 : 1">
                 <a
                     class="flex-grow-1 img-link"
                     :class="imageBorders"
                     :href="url"
                     :style="{ 'background-image': `url(${imgPath})` }"
                 >
-                    <!-- <img :class="imageBorders" :src="mediaPath" :alt="title" /> -->
                 </a>
             </v-col>
             <v-col
-                class="d-flex flex-column justify-space-between"
+                class="desc-flex d-flex flex-column justify-space-between"
                 cols="6"
                 sm="12"
                 order-sm="2"
@@ -58,7 +51,7 @@ export default {
             }
         },
         imgPath() {
-            return require(`~/static/${this.mediaPath}`);
+            return `/${this.mediaPath}`;
         }
     }
 };
@@ -66,7 +59,12 @@ export default {
 
 <style lang="scss" scoped>
 .img-flex {
-    flex-basis: 300px;
+    flex-basis: 250px;
+    flex-grow: 1;
+}
+
+.desc-flex {
+    flex-grow: 2;
 }
 
 .img-link {
@@ -74,12 +72,6 @@ export default {
     height: 100%;
     width: 100%;
     background-size: 100% 100%;
-    // background-size: cover;
-
-    img {
-        height: 100%;
-        width: 100%;
-    }
 }
 
 .left-image {

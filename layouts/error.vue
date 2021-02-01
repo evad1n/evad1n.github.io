@@ -1,44 +1,36 @@
 <template>
-    <v-app dark>
-        <h1 v-if="error.statusCode === 404">
-            {{ pageNotFound }}
-        </h1>
-        <h1 v-else>
-            {{ otherError }}
-        </h1>
-        <p>
-            {{ JSON.Stringify(error) }}
-        </p>
-        <NuxtLink to="/"> Home page </NuxtLink>
+    <v-app>
+        <v-container class="fill-height text-center">
+            <v-row>
+                <v-col class="d-flex flex-column justify-center align-center">
+                    <h1 id="huge">404</h1>
+                    <h1 class="pb-10">Nope</h1>
+                    <NuxtLink to="/">To Will Dickinson's home page </NuxtLink>
+                </v-col>
+            </v-row>
+        </v-container>
     </v-app>
 </template>
 
 <script>
 export default {
     layout: 'empty',
-    props: {
-        error: {
-            type: Object,
-            default: null
-        }
-    },
     data() {
-        return {
-            pageNotFound: '404 Not Found',
-            otherError: 'An error occurred'
-        };
-    },
-    head() {
-        const title = this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
-        return {
-            title
-        };
+        return {};
     }
 };
 </script>
 
 <style scoped>
 h1 {
-    font-size: 20px;
+    font-size: 50px;
+}
+
+#huge {
+    font-size: 200px;
+}
+
+#fancy {
+    font-size: 1rem;
 }
 </style>

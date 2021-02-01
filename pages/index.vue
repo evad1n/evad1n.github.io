@@ -31,7 +31,7 @@
             </v-col>
         </v-row>
         <v-row class="py-16 justify-center">
-            <v-col v-for="(project, i) in projects.medium" :key="i" cols="12" sm="6" md="4" class="medium-row">
+            <v-col v-for="(project, i) in projects.medium" :key="i" cols="12" sm="5" md="4" class="medium-row">
                 <medium-card v-bind="project" :reverse="i % 2 == 0"></medium-card>
             </v-col>
         </v-row>
@@ -46,7 +46,6 @@
                     Made with <a href="https://nuxtjs.org/">Nuxt.js</a> and
                     <a href="https://vuetifyjs.com/en/">Vuetify</a>
                 </span>
-                <span>Background made using <a href="https://p5js.org/">p5.js</a></span>
                 <span class="mt-2">&copy; {{ new Date().getFullYear() }} Will Dickinson</span>
             </v-col>
         </v-row>
@@ -92,6 +91,14 @@ export default {
 
 .full-height {
     height: 100vh;
+}
+
+.big-row {
+    min-height: 220px;
+}
+
+.medium-row {
+    min-height: 200px;
 }
 
 .small-row {
