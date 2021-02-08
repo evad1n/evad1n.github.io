@@ -2,7 +2,7 @@
     <div class="flip-outer">
         <div class="flip-inner">
             <div class="front">
-                <v-card class="fill-height" elevation="4" color="light-green lighten-2">
+                <v-card class="fill-height" elevation="4" color="black">
                     <img :src="mediaPath" :alt="title" />
                 </v-card>
             </div>
@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .flip-outer {
     display: block;
     height: 100%;
@@ -70,14 +70,14 @@ export default {
 
 .front {
     z-index: 2;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
 }
 
 .back {
     transform: rotateY(180deg);
-}
-
-img {
-    height: 100%;
-    width: 100%;
 }
 </style>

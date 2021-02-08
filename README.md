@@ -2,6 +2,10 @@
 
 [Link](https://evad1n.github.io/)
 
+# TODO: 
+- animations
+- template this repo cuz yee
+
 ## Build Setup
 
 ```bash

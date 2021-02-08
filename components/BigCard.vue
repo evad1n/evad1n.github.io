@@ -1,13 +1,9 @@
 <template>
     <v-card class="d-flex flex-column" elevation="4" color="light-green lighten-2" min-height="100%">
-        <v-row class="no-gutters flex-grow-1 d-flex flex-column flex-sm-row justify-space-between">
+        <v-row class="no-gutters flex-grow-1 d-flex flex-column flex-sm-row">
             <v-col class="img-flex d-flex flex-column" order="1" :order-sm="reverse ? 2 : 1" cols="12" sm="5">
-                <a
-                    class="flex-grow-1 img-link"
-                    :class="imageBorders"
-                    :href="url"
-                    :style="{ 'background-image': `url(${imgPath})` }"
-                >
+                <a class="flex-grow-1 img-link" :href="url">
+                    <img :class="imageBorders" :src="mediaPath" :alt="title" />
                 </a>
             </v-col>
             <v-col
@@ -66,10 +62,14 @@ export default {
 }
 
 .img-link {
-    display: block;
-    height: 100%;
-    width: 100%;
-    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 .left-image {

@@ -1,13 +1,16 @@
 <template>
     <v-card class="d-flex flex-column" elevation="4" color="light-green lighten-2" min-height="100%">
-        <v-row class="no-gutters flex-grow-1 d-flex flex-row flex-sm-column justify-space-between">
-            <v-col class="img-flex d-flex flex-column" cols="6" sm="12" order-sm="1" :order="reverse ? 2 : 1">
-                <a
-                    class="flex-grow-1 img-link"
-                    :class="imageBorders"
-                    :href="url"
-                    :style="{ 'background-image': `url(${imgPath})` }"
-                >
+        <v-row class="no-gutters flex-grow-1 d-flex flex-row flex-sm-column" id="r">
+            <v-col
+                class="img-flex d-flex flex-column"
+                :class="imageBorders"
+                cols="6"
+                sm="12"
+                order-sm="1"
+                :order="reverse ? 2 : 1"
+            >
+                <a class="flex-grow-1 img-link" :href="url">
+                    <img :class="imageBorders" :src="mediaPath" :alt="title" />
                 </a>
             </v-col>
             <v-col
@@ -59,19 +62,24 @@ export default {
 
 <style lang="scss" scoped>
 .img-flex {
-    flex-basis: 250px;
+    // height: 50%;
+    // flex-basis: 50%;
     flex-grow: 1;
+    background-color: black;
 }
 
-.desc-flex {
-    flex-grow: 2;
-}
+// .desc-flex {
+//     flex-grow: 2;
+// }
 
 .img-link {
-    display: block;
-    height: 100%;
-    width: 100%;
-    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+        object-fit: contain;
+    }
 }
 
 .left-image {
