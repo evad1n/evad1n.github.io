@@ -2,15 +2,28 @@
     <v-container>
         <v-row class="full-height">
             <v-col cols="12" class="d-flex flex-column justify-center">
-                <h1 class="text-center">WILL DICKINSON</h1>
-                <div class="mx-auto">
-                    <icon-link v-bind="{ ...iconColors, url: 'https://github.com/evad1n', icon: 'mdi-github' }" />
+                <vue-typer
+                    class="text-center"
+                    text="WILL DICKINSON"
+                    @completed="iconsReady"
+                    :pre-type-delay="2000"
+                    :type-delay="90"
+                    :repeat="0"
+                ></vue-typer>
+                <div class="icon-bar mx-auto" :style="iconBar">
+                    <icon-link
+                        v-bind="{
+                            ...iconColors,
+                            url: 'https://github.com/evad1n',
+                            icon: 'mdi-github'
+                        }"
+                    />
                 </div>
             </v-col>
         </v-row>
         <v-row id="bio" class="my-4">
             <v-col cols="12">
-                <p class="mx-auto text-center h4 ma-0 pa-10">Game Design turned Computer Science student.</p>
+                <p class="mx-auto text-center h4 ma-0 pa-10">Game Design turned Computer Science student</p>
             </v-col>
         </v-row>
         <v-row class="my-8">
@@ -53,6 +66,8 @@
 </template>
 
 <script>
+import { VueTyper } from 'vue-typer';
+
 import projects from '~/static/projects.json';
 
 import BigCard from '~/components/BigCard.vue';
@@ -62,6 +77,7 @@ import IconLink from '~/components/IconLink.vue';
 
 export default {
     components: {
+        VueTyper,
         BigCard,
         MediumCard,
         SmallCard,
@@ -74,8 +90,28 @@ export default {
                 baseColor: 'black',
                 hoverColor: 'white',
                 tipColor: 'grey darken-3'
-            }
+            },
+            showIcons: false,
+            enableIcons: false
         };
+    },
+    methods: {
+        iconsReady() {
+            this.showIcons = true;
+            // setTimeout(() => {
+            //     this.enableIcons = true;
+            // }, 500);
+        }
+    },
+    computed: {
+        iconBar() {
+            return {
+                animation: this.showIcons ? 'delay-icons 2s linear' : 'none',
+                visibility: this.showIcons ? 'visible' : 'hidden'
+                // opacity: this.showIcons ? 1 : 0,
+                // pointerEvents: this.showIcons ? 'auto' : 'none'
+            };
+        }
     }
 };
 </script>
@@ -87,6 +123,30 @@ export default {
 #bio {
     border-top: 2px solid map-get($grey, 'darken-4');
     border-bottom: 2px solid map-get($grey, 'darken-4');
+}
+
+@keyframes delay-icons {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    50% {
+        visibility: hidden;
+        opacity: 0.5;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.icon-bar {
+    // animation: none;
+    // transition: visiblity 0s linear 0.5s;
+    // transition: opacity 1s linear 0.5s;
+    // transition: pointer-events 0s linear 1s;
 }
 
 .full-height {
@@ -112,5 +172,15 @@ a {
     &:hover {
         color: $link-hover !important;
     }
+}
+
+// Vue typer styles
+.vue-typer {
+    font-size: 50px;
+}
+
+.vue-typer .custom.caret {
+    width: 3px;
+    line-height: 50px;
 }
 </style>
