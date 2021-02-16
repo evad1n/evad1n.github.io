@@ -10,7 +10,7 @@
                 movement-direction="top"
                 lines-color="#000"
                 :line-linked="true"
-                :move-speed="0.75"
+                :move-speed="1"
             />
         </client-only>
     </v-app>

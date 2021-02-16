@@ -189,8 +189,8 @@ export default {
                     move: {
                         enable: true,
                         speed: moveSpeed,
-                        direction: movementDirection,
-                        random: false,
+                        direction: 'none',
+                        random: true,
                         straight: false,
                         out_mode: 'out',
                         bounce: false,

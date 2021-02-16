@@ -11,7 +11,7 @@
                     :type-delay="90"
                     :repeat="0"
                 ></vue-typer>
-                <div class="icon-bar mx-auto">
+                <div class="icon-bar mx-auto" :style="iconBarStyle" disabled="true">
                     <icon-link
                         v-bind="{
                             ...iconColors,
@@ -77,6 +77,7 @@
 
 <script>
 import { VueTyper } from 'vue-typer';
+import anime from 'animejs/lib/anime.es.js';
 
 import projects from '~/static/projects.json';
 
@@ -101,43 +102,46 @@ export default {
                 hoverColor: 'white',
                 tipColor: 'grey darken-3'
             },
-            showIcons: false,
             enableIcons: false
         };
     },
     methods: {
         iconsReady() {
-            this.showIcons = true;
-            // setTimeout(() => {
-            //     this.enableIcons = true;
-            // }, 500);
+            anime({
+                targets: '.icon-bar',
+                opacity: 1,
+                easing: 'linear',
+                duration: 1000
+            });
+            this.enableIcons = true;
         }
     },
     computed: {
-        iconBar() {
+        iconBarStyle() {
             return {
-                animation: this.showIcons ? 'delay-icons 2s linear' : 'none',
-                visibility: this.showIcons ? 'visible' : 'hidden'
-                // opacity: this.showIcons ? 1 : 0,
-                // pointerEvents: this.showIcons ? 'auto' : 'none'
+                visibility: this.enableIcons ? 'visible' : 'hidden'
             };
         }
-    }
+    },
+    mounted() {}
 };
 </script>
 
 
 <style lang="scss">
 @import '~assets/variables.scss';
+.full-height {
+    height: 100vh;
+}
+
+.icon-bar {
+    opacity: 0;
+}
 
 #bio {
     font-size: 1.1rem;
     border-top: 2px solid map-get($grey, 'darken-4');
     border-bottom: 2px solid map-get($grey, 'darken-4');
-}
-
-.full-height {
-    height: 100vh;
 }
 
 // Links
@@ -147,6 +151,7 @@ a {
     transition: 0.2s;
     &:hover {
         color: $link-hover !important;
+        line-height: 110%;
     }
 }
 
@@ -161,7 +166,6 @@ a {
 }
 
 // Row sizes
-
 .big-row {
     height: 300px;
 }
