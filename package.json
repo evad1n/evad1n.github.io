@@ -9,8 +9,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "animejs": "^3.2.1",
     "core-js": "^3.8.2",
-    "nuxt": "^2.15.0"
+    "nuxt": "^2.15.0",
+    "particles.js": "^2.0.0",
+    "vue-typer": "^1.2.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.3"
