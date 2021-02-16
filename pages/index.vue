@@ -3,19 +3,29 @@
         <v-row class="full-height">
             <v-col cols="12" class="d-flex flex-column justify-center">
                 <vue-typer
-                    class="text-center"
+                    id="header"
+                    class="text-center font-weight-regular text-h4 text-sm-h2"
                     text="WILL DICKINSON"
                     @completed="iconsReady"
                     :pre-type-delay="2000"
                     :type-delay="90"
                     :repeat="0"
                 ></vue-typer>
-                <div class="icon-bar mx-auto" :style="iconBar">
+                <div class="icon-bar mx-auto">
                     <icon-link
                         v-bind="{
                             ...iconColors,
                             url: 'https://github.com/evad1n',
-                            icon: 'mdi-github'
+                            icon: 'mdi-github',
+                            tooltip: 'GitHub'
+                        }"
+                    />
+                    <icon-link
+                        v-bind="{
+                            ...iconColors,
+                            url: 'https://www.linkedin.com/in/will-dickinson/',
+                            icon: 'mdi-linkedin',
+                            tooltip: 'LinkedIn'
                         }"
                     />
                 </div>
@@ -26,7 +36,7 @@
                 <p class="mx-auto text-center h4 ma-0 pa-10">Game Design turned Computer Science student</p>
             </v-col>
         </v-row>
-        <v-row class="my-8">
+        <v-row class="my-8 text-h5">
             <v-col>
                 <h2 class="mx-auto text-center">Projects</h2>
             </v-col>
@@ -54,7 +64,7 @@
             </v-col>
         </v-row>
         <v-row class="pb-4">
-            <v-col cols="12" class="d-flex flex-column align-center subtitle-2 pa-0 mt-10">
+            <v-col cols="12" class="d-flex flex-column align-center pa-0 mt-10">
                 <span>
                     Made with <a href="https://nuxtjs.org/">Nuxt.js</a> and
                     <a href="https://vuetifyjs.com/en/">Vuetify</a>
@@ -120,7 +130,12 @@ export default {
 <style lang="scss">
 @import '~assets/variables.scss';
 
+#header {
+    // font-size: 10vw;
+}
+
 #bio {
+    font-size: 1.1rem;
     border-top: 2px solid map-get($grey, 'darken-4');
     border-bottom: 2px solid map-get($grey, 'darken-4');
 }

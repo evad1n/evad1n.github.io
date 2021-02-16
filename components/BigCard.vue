@@ -52,38 +52,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.img-flex {
-    flex-basis: 250px;
-    flex-grow: 1;
-}
-
-.desc-flex {
-    flex-grow: 2;
-}
-
-.img-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    img {
-        height: 100%;
-        object-fit: contain;
-    }
-}
-
-.left-image {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
-
-.right-image {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-.top-image {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
+@import '~assets/card.scss';
 </style>

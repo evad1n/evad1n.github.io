@@ -34,8 +34,7 @@ export default {
 
 html {
     font-family: 'Courier New', Courier, monospace;
-    // background-color: #c4ec96;
-    font-size: 5rem;
+    font-weight: 600;
 }
 
 .v-application {

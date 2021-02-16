@@ -7,7 +7,7 @@
                 </v-hover>
             </v-btn>
         </template>
-        <span>GitHub</span>
+        <span class="font-weight-regular">{{ tooltip }}</span>
     </v-tooltip>
 </template>
 
@@ -18,7 +18,8 @@ export default {
         hoverColor: String,
         tipColor: String,
         url: String,
-        icon: String
+        icon: String,
+        tooltip: String
     },
     data() {
         return {
@@ -28,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .v-btn:before {
     opacity: 0 !important;
 }

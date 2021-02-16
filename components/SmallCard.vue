@@ -16,8 +16,8 @@
                     <v-card-text class="text-center py-1">
                         {{ description }}
                     </v-card-text>
-                    <v-card-text class="d-flex justify-center">
-                        <v-btn class="px-10" color="light-green lighten-4" :href="url">go</v-btn>
+                    <v-card-text class="d-flex justify-center text--black">
+                        <v-btn class="px-10" color="light-green lighten-1" :href="url">go</v-btn>
                     </v-card-text>
                 </v-card>
             </div>
@@ -42,6 +42,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~assets/card.scss';
+
+.v-btn {
+    font-weight: 800 !important;
+
+    &:not(:hover) {
+        color: black !important;
+    }
+}
+
 .flip-outer {
     display: block;
     height: 100%;
