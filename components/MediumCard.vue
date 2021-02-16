@@ -61,39 +61,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~assets/card.scss';
+
 .img-flex {
     // height: 50%;
     // flex-basis: 50%;
     flex-grow: 1;
     background-color: black;
-}
-
-// .desc-flex {
-//     flex-grow: 2;
-// }
-
-.img-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    img {
-        object-fit: contain;
-    }
-}
-
-.left-image {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
-
-.right-image {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-.top-image {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
 }
 </style>
