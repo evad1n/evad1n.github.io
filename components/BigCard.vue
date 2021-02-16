@@ -1,27 +1,19 @@
 <template>
-    <v-card class="d-flex flex-column" elevation="4" color="light-green lighten-2" min-height="100%">
-        <v-row class="no-gutters flex-grow-1 d-flex flex-column flex-sm-row">
-            <v-col class="img-flex d-flex flex-column" order="1" :order-sm="reverse ? 2 : 1" cols="12" sm="5">
-                <a class="flex-grow-1 img-link" :href="url">
-                    <img :class="imageBorders" :src="mediaPath" :alt="title" />
-                </a>
-            </v-col>
-            <v-col
-                class="desc-flex d-flex flex-column justify-space-between"
-                order="2"
-                :order-sm="reverse ? 1 : 2"
-                cols="12"
-                sm="7"
-            >
-                <v-card-title class="justify-center text-center text-break">{{ title }}</v-card-title>
-                <v-card-text class="text-center" v-html="description"> </v-card-text>
-                <div class="d-flex justify-center flex-wrap pb-2">
-                    <v-chip v-for="(tool, i) in tools" :key="i" label class="ma-1 light-green darken-2 white--text">{{
-                        tool
-                    }}</v-chip>
-                </div>
-            </v-col>
-        </v-row>
+    <v-card class="card" :class="reverseGrid" elevation="4" color="light-green lighten-2">
+        <div class="img" :class="reverseClasses[0]">
+            <a :class="imageBorders" :href="url">
+                <img :src="mediaPath" :alt="title" />
+            </a>
+        </div>
+        <div class="desc" :class="reverseClasses[1]">
+            <v-card-title class="justify-center text-center text-break">{{ title }}</v-card-title>
+            <v-card-text class="text-center" v-html="description"> </v-card-text>
+            <div class="d-flex justify-center pb-2">
+                <v-chip v-for="(tool, i) in tools" :key="i" label class="ma-1 light-green darken-2 white--text">{{
+                    tool
+                }}</v-chip>
+            </div>
+        </div>
     </v-card>
 </template>
 
@@ -41,11 +33,17 @@ export default {
                 case 'xs':
                     return 'top-image';
                 default:
-                    return this.reverse ? 'right-image' : 'left-image';
+                    return this.reverse ? 'left-image' : 'right-image';
             }
         },
         imgPath() {
             return `/${this.mediaPath}`;
+        },
+        reverseClasses() {
+            return this.reverse ? ['left', 'right'] : ['right', 'left'];
+        },
+        reverseGrid() {
+            return this.reverse ? 'card-left' : 'card-right';
         }
     }
 };
@@ -53,4 +51,5 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/card.scss';
+@import '~assets/bigCard.scss';
 </style>

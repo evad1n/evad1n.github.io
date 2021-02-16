@@ -38,7 +38,7 @@
         </v-row>
         <v-row class="my-8 text-h5">
             <v-col>
-                <h2 class="mx-auto text-center">Projects</h2>
+                <h2 class="mx-auto text-center text-h3 font-weight-bold">Projects</h2>
             </v-col>
         </v-row>
         <v-row class="pb-16">
@@ -130,56 +130,17 @@ export default {
 <style lang="scss">
 @import '~assets/variables.scss';
 
-#header {
-    // font-size: 10vw;
-}
-
 #bio {
     font-size: 1.1rem;
     border-top: 2px solid map-get($grey, 'darken-4');
     border-bottom: 2px solid map-get($grey, 'darken-4');
 }
 
-@keyframes delay-icons {
-    0% {
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    50% {
-        visibility: hidden;
-        opacity: 0.5;
-    }
-
-    100% {
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-.icon-bar {
-    // animation: none;
-    // transition: visiblity 0s linear 0.5s;
-    // transition: opacity 1s linear 0.5s;
-    // transition: pointer-events 0s linear 1s;
-}
-
 .full-height {
     height: 100vh;
 }
 
-.big-row {
-    min-height: 220px;
-}
-
-.medium-row {
-    min-height: 200px;
-}
-
-.small-row {
-    height: 200px;
-}
-
+// Links
 a {
     text-decoration: none;
     color: $link !important;
@@ -197,5 +158,29 @@ a {
 .vue-typer .custom.caret {
     width: 3px;
     line-height: 50px;
+}
+
+// Row sizes
+
+.big-row {
+    height: 300px;
+}
+
+.medium-row {
+    height: 420px;
+}
+
+.small-row {
+    height: 200px;
+}
+
+@media screen and (max-width: #{map-get($grid-breakpoints, 'sm')}) {
+    .big-row {
+        height: 420px;
+    }
+
+    .medium-row {
+        height: 250px;
+    }
 }
 </style>
