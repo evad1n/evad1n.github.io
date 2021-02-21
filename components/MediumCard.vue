@@ -1,5 +1,5 @@
 <template>
-    <v-card class="card" elevation="4" color="light-green lighten-2">
+    <v-card class="card" :class="reverseGrid" elevation="4" color="light-green lighten-2">
         <div class="img" :class="reverseClasses[0]">
             <a :class="imageBorders" :href="url">
                 <img :src="mediaPath" :alt="title" />
@@ -41,12 +41,15 @@ export default {
         },
         reverseClasses() {
             return this.reverse ? ['left', 'right'] : ['right', 'left'];
+        },
+        reverseGrid() {
+            return this.reverse ? 'card-left' : 'card-right';
         }
     }
 };
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/card.scss';
-@import '~assets/mediumCard.scss';
+@import '~assets/cards/card.scss';
+@import '~assets/cards/medium.scss';
 </style>

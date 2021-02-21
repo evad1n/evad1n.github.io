@@ -8,7 +8,7 @@
             </div>
             <div class="back">
                 <v-card
-                    class="fill-height d-flex flex-column justify-space-between align-center"
+                    class="fill-height pa-4 d-flex flex-column justify-space-between align-center"
                     elevation="4"
                     color="light-green lighten-2"
                 >
@@ -42,52 +42,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/card.scss';
-
-.v-btn {
-    font-weight: 800 !important;
-
-    &:not(:hover) {
-        color: black !important;
-    }
-}
-
-.flip-outer {
-    display: block;
-    height: 100%;
-    perspective: 1000px;
-}
-
-.flip-inner {
-    transform-style: preserve-3d;
-    position: relative;
-    transition: transform 0.7s;
-    width: 100%;
-    height: 100%;
-}
-
-.flip-outer:hover .flip-inner {
-    transform: rotateY(180deg);
-}
-
-.front,
-.back {
-    backface-visibility: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.front {
-    z-index: 2;
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-    }
-}
-
-.back {
-    transform: rotateY(180deg);
-}
+@import '~assets/cards/card.scss';
+@import '~assets/cards/small.scss';
 </style>

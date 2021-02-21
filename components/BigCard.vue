@@ -50,6 +50,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/card.scss';
-@import '~assets/bigCard.scss';
+@import '~assets/cards/card.scss';
+@import '~assets/cards/big.scss';
 </style>

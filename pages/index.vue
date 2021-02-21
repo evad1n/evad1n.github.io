@@ -59,7 +59,7 @@
             </v-col>
         </v-row>
         <v-row class="py-8 justify-center">
-            <v-col v-for="(project, i) in projects.small" :key="i" cols="6" sm="4" md="4" lg="3" class="small-row">
+            <v-col v-for="(project, i) in projects.small" :key="i" cols="9" sm="5" md="4" lg="3" class="small-row">
                 <small-card v-bind="project"></small-card>
             </v-col>
         </v-row>
@@ -111,6 +111,7 @@ export default {
                 targets: '.icon-bar',
                 opacity: 1,
                 easing: 'linear',
+                delay: 200,
                 duration: 1000
             });
             this.enableIcons = true;
@@ -130,10 +131,6 @@ export default {
 
 <style lang="scss">
 @import '~assets/variables.scss';
-.full-height {
-    height: 100vh;
-}
-
 .icon-bar {
     opacity: 0;
 }
@@ -142,17 +139,6 @@ export default {
     font-size: 1.1rem;
     border-top: 2px solid map-get($grey, 'darken-4');
     border-bottom: 2px solid map-get($grey, 'darken-4');
-}
-
-// Links
-a {
-    text-decoration: none;
-    color: $link !important;
-    transition: 0.2s;
-    &:hover {
-        color: $link-hover !important;
-        line-height: 110%;
-    }
 }
 
 // Vue typer styles
@@ -175,7 +161,7 @@ a {
 }
 
 .small-row {
-    height: 200px;
+    height: 250px;
 }
 
 @media screen and (max-width: #{map-get($grid-breakpoints, 'sm')}) {
@@ -184,7 +170,7 @@ a {
     }
 
     .medium-row {
-        height: 250px;
+        height: 300px;
     }
 }
 </style>
