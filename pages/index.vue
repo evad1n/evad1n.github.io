@@ -63,6 +63,11 @@
                 <small-card v-bind="project"></small-card>
             </v-col>
         </v-row>
+        <v-row>
+            <v-col>
+                <nuxt-link to="/repos">My Repositories</nuxt-link>
+            </v-col></v-row
+        >
         <v-row class="pb-4">
             <v-col cols="12" class="d-flex flex-column align-center pa-0 mt-10">
                 <span>
