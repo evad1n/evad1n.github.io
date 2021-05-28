@@ -7,7 +7,7 @@
                     class="text-center font-weight-regular text-h4 text-sm-h2"
                     text="WILL DICKINSON"
                     @completed="iconsReady"
-                    :pre-type-delay="2000"
+                    :pre-type-delay="1000"
                     :type-delay="90"
                     :repeat="0"
                 ></vue-typer>
@@ -33,7 +33,7 @@
         </v-row>
         <v-row id="bio" class="my-4">
             <v-col cols="12">
-                <p class="mx-auto text-center h4 ma-0 pa-10">Game Design turned Computer Science student</p>
+                <p class="mx-auto text-center h4 ma-0 pa-10">Software engineer with a game design background</p>
             </v-col>
         </v-row>
         <v-row class="my-8 text-h5">

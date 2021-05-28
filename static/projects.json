@@ -1,13 +1,14 @@
 {
 	"big": [
 		{
-			"title": "Ballistic",
-			"url": "https://evad1n.github.io/ballistic",
-			"mediaPath": "images/ballistic.png",
-			"description": "A 2-player tank shooter inspired by <a href='https://tanktrouble.com/'>Tank Trouble</a>",
+			"title": "Lexicogn",
+			"url": "https://play.google.com/store/apps/details?id=evad1n.lexicogn",
+			"mediaPath": "images/lexicogn.jpg",
+			"description": "A mobile app to keep track of and study new vocabulary words",
 			"tools": [
-				"JavaScript",
-				"PixiJS"
+				"TypeScript",
+				"React Native",
+				"Expo"
 			]
 		},
 		{
@@ -20,6 +21,27 @@
 				"Vue",
 				"Python",
 				"Flask"
+			]
+		},
+		{
+			"title": "Chatbot Wars",
+			"url": "https://chatbot-wars.herokuapp.com/#/",
+			"mediaPath": "images/chatbot-wars.png",
+			"description": "Make a chatbot, watch it crash and burn",
+			"tools": [
+				"JavaScript",
+				"React",
+				"Go"
+			]
+		},
+		{
+			"title": "Ballistic",
+			"url": "https://evad1n.github.io/ballistic",
+			"mediaPath": "images/ballistic.png",
+			"description": "A 2-player tank shooter inspired by <a href='https://tanktrouble.com/'>Tank Trouble</a>",
+			"tools": [
+				"JavaScript",
+				"PixiJS"
 			]
 		},
 		{
