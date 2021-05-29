@@ -10,6 +10,8 @@
                     :pre-type-delay="1000"
                     :type-delay="90"
                     :repeat="0"
+                    :initialAction="recentVisit ? 'erasing' : 'typing'"
+                    caretAnimation="blink"
                 ></vue-typer>
                 <div class="icon-bar mx-auto" :style="iconBarStyle" disabled="true">
                     <icon-link
@@ -64,8 +66,8 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col>
-                <nuxt-link to="/repos">My Repositories</nuxt-link>
+            <v-col id="all-repositories">
+                <nuxt-link to="/repositories">All Repositories</nuxt-link>
             </v-col></v-row
         >
         <v-row class="pb-4">
@@ -86,9 +88,9 @@ import anime from 'animejs/lib/anime.es.js';
 
 import projects from '~/static/projects.json';
 
-import BigCard from '~/components/BigCard.vue';
-import MediumCard from '~/components/MediumCard.vue';
-import SmallCard from '~/components/SmallCard.vue';
+import BigCard from '~/components/project-cards/BigCard.vue';
+import MediumCard from '~/components/project-cards/MediumCard.vue';
+import SmallCard from '~/components/project-cards/SmallCard.vue';
 import IconLink from '~/components/IconLink.vue';
 
 export default {
@@ -107,7 +109,8 @@ export default {
                 hoverColor: 'white',
                 tipColor: 'grey darken-3'
             },
-            enableIcons: false
+            enableIcons: false,
+            recentVisit: false
         };
     },
     methods: {
@@ -117,7 +120,7 @@ export default {
                 opacity: 1,
                 easing: 'linear',
                 delay: 200,
-                duration: 1000
+                duration: this.recentVisit ? 0 : 1000
             });
             this.enableIcons = true;
         }
@@ -129,7 +132,20 @@ export default {
             };
         }
     },
-    mounted() {}
+    created() {
+        // Prevent intro animations from showing too frequently
+        const HOUR_TIMEOUT = 1;
+
+        // Get last visit
+        let lastVisit = new Date(JSON.parse(localStorage.getItem('@recent')));
+        console.log(lastVisit);
+        console.log(new Date() - lastVisit);
+        if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
+            localStorage.setItem('@recent', JSON.stringify(new Date()));
+        } else {
+            this.recentVisit = true;
+        }
+    }
 };
 </script>
 
@@ -176,6 +192,18 @@ export default {
 
     .medium-row {
         height: 300px;
+    }
+}
+
+#all-repositories {
+    text-align: center;
+    border-top: 2px solid map-get($grey, 'darken-4');
+    border-bottom: 2px solid map-get($grey, 'darken-4');
+    margin-top: 20px;
+    padding: 40px 0;
+
+    & a {
+        font-size: 1.4rem;
     }
 }
 </style>

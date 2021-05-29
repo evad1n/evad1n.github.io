@@ -1,6 +1,8 @@
 <template>
     <v-app>
-        <Nuxt />
+        <keep-alive>
+            <Nuxt />
+        </keep-alive>
         <client-only>
             <particles
                 color="#000"
@@ -20,6 +22,7 @@
 import Particles from '~/components/Particles';
 
 export default {
+    name: 'default',
     components: {
         Particles
     },

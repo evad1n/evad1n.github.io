@@ -17,7 +17,7 @@
                         {{ description }}
                     </v-card-text>
                     <v-card-text class="d-flex justify-center text--black">
-                        <v-btn class="px-10" color="light-green lighten-1" :href="url">go</v-btn>
+                        <v-btn class="px-10" color="light-green lighten-1" :href="url">Demo</v-btn>
                     </v-card-text>
                 </v-card>
             </div>
