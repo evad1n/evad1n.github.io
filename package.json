@@ -1,6 +1,6 @@
 {
   "name": "evad1n.github.io",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -17,5 +17,9 @@
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evad1n/evad1n.github.io"
   }
 }
