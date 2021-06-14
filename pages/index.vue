@@ -138,8 +138,6 @@ export default {
 
         // Get last visit
         let lastVisit = new Date(JSON.parse(localStorage.getItem('@recent')));
-        console.log(lastVisit);
-        console.log(new Date() - lastVisit);
         if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
             localStorage.setItem('@recent', JSON.stringify(new Date()));
         } else {
