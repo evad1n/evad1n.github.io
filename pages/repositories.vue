@@ -35,7 +35,7 @@
                         @click:row="clickRow"
                     >
                         <!-- Date formatting -->
-                        <template v-slot:item.pushed_at="{ item }">
+                        <template v-slot:[`item.pushed_at`]="{ item }">
                             {{ new Date(item.pushed_at).toLocaleDateString() }}
                         </template>
                     </v-data-table>
