@@ -36,7 +36,7 @@
 		},
 		{
 			"title": "Ballistic",
-			"url": "https://evad1n.github.io/ballistic",
+			"url": "https://evad1n.github.io/ballistic-v1",
 			"mediaPath": "images/ballistic.png",
 			"description": "A 2-player tank shooter inspired by <a href='https://tanktrouble.com/'>Tank Trouble</a>",
 			"tools": [
