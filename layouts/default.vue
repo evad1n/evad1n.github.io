@@ -19,20 +19,20 @@
 </template>
 
 <script>
-import Particles from '~/components/Particles';
+import Particles from "~/components/Particles";
 
 export default {
-    name: 'default',
+    name: "default",
     components: {
-        Particles
+        Particles,
     },
     data() {
         return {};
-    }
+    },
 };
 </script>
 
 <style lang="scss">
-@import '~assets/variables.scss';
-@import '~assets/global.scss';
+@import "~assets/variables.scss";
+@import "~assets/global.scss";
 </style>

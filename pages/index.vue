@@ -19,7 +19,7 @@
                             ...iconColors,
                             url: 'https://github.com/evad1n',
                             icon: 'mdi-github',
-                            tooltip: 'GitHub'
+                            tooltip: 'GitHub',
                         }"
                     />
                     <icon-link
@@ -27,7 +27,7 @@
                             ...iconColors,
                             url: 'https://www.linkedin.com/in/will-dickinson/',
                             icon: 'mdi-linkedin',
-                            tooltip: 'LinkedIn'
+                            tooltip: 'LinkedIn',
                         }"
                     />
                 </div>
@@ -83,15 +83,15 @@
 </template>
 
 <script>
-import { VueTyper } from 'vue-typer';
-import anime from 'animejs/lib/anime.es.js';
+import { VueTyper } from "vue-typer";
+import anime from "animejs/lib/anime.es.js";
 
-import projects from '~/static/projects.json';
+import projects from "~/static/projects.json";
 
-import BigCard from '~/components/project-cards/BigCard.vue';
-import MediumCard from '~/components/project-cards/MediumCard.vue';
-import SmallCard from '~/components/project-cards/SmallCard.vue';
-import IconLink from '~/components/IconLink.vue';
+import BigCard from "~/components/project-cards/BigCard.vue";
+import MediumCard from "~/components/project-cards/MediumCard.vue";
+import SmallCard from "~/components/project-cards/SmallCard.vue";
+import IconLink from "~/components/IconLink.vue";
 
 export default {
     components: {
@@ -99,65 +99,65 @@ export default {
         BigCard,
         MediumCard,
         SmallCard,
-        IconLink
+        IconLink,
     },
     data() {
         return {
             projects: projects,
             iconColors: {
-                baseColor: 'black',
-                hoverColor: 'white',
-                tipColor: 'grey darken-3'
+                baseColor: "black",
+                hoverColor: "white",
+                tipColor: "grey darken-3",
             },
             enableIcons: false,
-            recentVisit: false
+            recentVisit: false,
         };
     },
     methods: {
         iconsReady() {
             anime({
-                targets: '.icon-bar',
+                targets: ".icon-bar",
                 opacity: 1,
-                easing: 'linear',
+                easing: "linear",
                 delay: 200,
-                duration: this.recentVisit ? 0 : 1000
+                duration: this.recentVisit ? 0 : 1000,
             });
             this.enableIcons = true;
-        }
+        },
     },
     computed: {
         iconBarStyle() {
             return {
-                visibility: this.enableIcons ? 'visible' : 'hidden'
+                visibility: this.enableIcons ? "visible" : "hidden",
             };
-        }
+        },
     },
     created() {
         // Prevent intro animations from showing too frequently
         const HOUR_TIMEOUT = 1;
 
         // Get last visit
-        let lastVisit = new Date(JSON.parse(localStorage.getItem('@recent')));
+        const lastVisit = new Date(JSON.parse(localStorage.getItem("@recent")));
         if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
-            localStorage.setItem('@recent', JSON.stringify(new Date()));
+            localStorage.setItem("@recent", JSON.stringify(new Date()));
         } else {
             this.recentVisit = true;
         }
-    }
+    },
 };
 </script>
 
 
 <style lang="scss">
-@import '~assets/variables.scss';
+@import "~assets/variables.scss";
 .icon-bar {
     opacity: 0;
 }
 
 #bio {
     font-size: 1.1rem;
-    border-top: 2px solid map-get($grey, 'darken-4');
-    border-bottom: 2px solid map-get($grey, 'darken-4');
+    border-top: 2px solid map-get($grey, "darken-4");
+    border-bottom: 2px solid map-get($grey, "darken-4");
 }
 
 // Vue typer styles
@@ -195,8 +195,8 @@ export default {
 
 #all-repositories {
     text-align: center;
-    border-top: 2px solid map-get($grey, 'darken-4');
-    border-bottom: 2px solid map-get($grey, 'darken-4');
+    border-top: 2px solid map-get($grey, "darken-4");
+    border-bottom: 2px solid map-get($grey, "darken-4");
     margin-top: 20px;
     padding: 40px 0;
 

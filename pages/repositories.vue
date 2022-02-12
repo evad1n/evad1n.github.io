@@ -50,41 +50,41 @@ export default {
     data() {
         return {
             loaded: false,
-            search: '',
+            search: "",
             repos: [],
             // Which fields to show
             headers: [
                 {
-                    text: 'Name',
-                    value: 'name'
+                    text: "Name",
+                    value: "name",
                 },
                 {
-                    text: 'Description',
-                    value: 'description',
-                    sortable: false
+                    text: "Description",
+                    value: "description",
+                    sortable: false,
                 },
                 {
-                    text: 'Primary Language',
-                    value: 'language'
+                    text: "Primary Language",
+                    value: "language",
                 },
                 {
-                    text: 'Last Push',
-                    value: 'pushed_at'
-                }
-            ]
+                    text: "Last Push",
+                    value: "pushed_at",
+                },
+            ],
         };
     },
     methods: {
         clickRow(item) {
             // Open repo page in new tab/window
             window.open(item.html_url);
-        }
+        },
     },
     async created() {
         // https://docs.github.com/en/rest/reference/repos
         // Get my public repos
-        let data = await fetch('https://api.github.com/users/evad1n/repos');
-        let repos = await data.json();
+        const data = await fetch("https://api.github.com/users/evad1n/repos");
+        const repos = await data.json();
         // Filter out archived repos
         repos = repos.filter((repo) => !repo.archived);
         // Sort by most recent push
@@ -92,7 +92,7 @@ export default {
         this.repos = repos;
         // Done loading
         this.loaded = true;
-    }
+    },
 };
 </script>
 
