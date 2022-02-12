@@ -84,7 +84,7 @@ export default {
         // https://docs.github.com/en/rest/reference/repos
         // Get my public repos
         const data = await fetch("https://api.github.com/users/evad1n/repos");
-        const repos = await data.json();
+        let repos = await data.json();
         // Filter out archived repos
         repos = repos.filter((repo) => !repo.archived);
         // Sort by most recent push
