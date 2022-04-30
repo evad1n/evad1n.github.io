@@ -1,43 +1,54 @@
-import colors from 'vuetify/es5/util/colors';
+import colors from "vuetify/es5/util/colors";
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - evad1n.github.io',
-    title: 'Will Dickinson',
+    titleTemplate: "%s - evad1n.github.io",
+    title: "Will Dickinson",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
+      {
+        hid: "og-title",
+        property: "og:title",
+        content: "Will Dickinson - evad1n.github.io",
+      },
+      {
+        hid: "og-description",
+        property: "og:description",
+        content: "Software engineer with a game design background",
+      },
+      {
+        hid: "og-image",
+        property: "og:image",
+        content: "https://evad1n.github.io/favicon.ico",
+      },
     ],
-    link: [
-      { rel: 'shortcut icon', type: 'image/x-icon', href: 'favicon.ico' }
-    ]
+    link: [{ rel: "shortcut icon", type: "image/x-icon", href: "favicon.ico" }],
   },
 
   vue: {
     config: {
       productionTip: false,
-      devtools: true
-    }
+      devtools: true,
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -45,16 +56,15 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    "@nuxtjs/vuetify",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: [],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ["~/assets/variables.scss"],
     treeShake: true,
     theme: {
       themes: {
@@ -66,17 +76,16 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          background: colors.lightGreen.base
-        }
-      }
-    }
+          background: colors.lightGreen.base,
+        },
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
 
   generate: {
-    fallback: '404.html',
-  }
+    fallback: "404.html",
+  },
 };
