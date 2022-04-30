@@ -13,7 +13,11 @@
                     :initialAction="recentVisit ? 'erasing' : 'typing'"
                     caretAnimation="blink"
                 ></vue-typer>
-                <div class="icon-bar mx-auto" :style="iconBarStyle" disabled="true">
+                <div
+                    class="icon-bar mx-auto"
+                    :style="iconBarStyle"
+                    disabled="true"
+                >
                     <icon-link
                         v-bind="{
                             ...iconColors,
@@ -35,12 +39,16 @@
         </v-row>
         <v-row id="bio" class="my-4">
             <v-col cols="12">
-                <p class="mx-auto text-center h4 ma-0 pa-10">Software engineer with a game design background</p>
+                <p class="mx-auto text-center h4 ma-0 pa-10">
+                    Software engineer with a game design background
+                </p>
             </v-col>
         </v-row>
         <v-row class="my-8 text-h5">
             <v-col>
-                <h2 class="mx-auto text-center text-h3 font-weight-bold">Projects</h2>
+                <h2 class="mx-auto text-center text-h3 font-weight-bold">
+                    Projects
+                </h2>
             </v-col>
         </v-row>
         <v-row class="pb-16">
@@ -56,12 +64,30 @@
             </v-col>
         </v-row>
         <v-row class="py-16 justify-center">
-            <v-col v-for="(project, i) in projects.medium" :key="i" cols="12" sm="5" md="4" class="medium-row">
-                <medium-card v-bind="project" :reverse="i % 2 == 0"></medium-card>
+            <v-col
+                v-for="(project, i) in projects.medium"
+                :key="i"
+                cols="12"
+                sm="5"
+                md="4"
+                class="medium-row"
+            >
+                <medium-card
+                    v-bind="project"
+                    :reverse="i % 2 == 0"
+                ></medium-card>
             </v-col>
         </v-row>
         <v-row class="py-8 justify-center">
-            <v-col v-for="(project, i) in projects.small" :key="i" cols="9" sm="5" md="4" lg="3" class="small-row">
+            <v-col
+                v-for="(project, i) in projects.small"
+                :key="i"
+                cols="9"
+                sm="5"
+                md="4"
+                lg="3"
+                class="small-row"
+            >
                 <small-card v-bind="project"></small-card>
             </v-col>
         </v-row>
@@ -76,7 +102,9 @@
                     Made with <a href="https://nuxtjs.org/">Nuxt.js</a> and
                     <a href="https://vuetifyjs.com/en/">Vuetify</a>
                 </span>
-                <span class="mt-2">&copy; {{ new Date().getFullYear() }} Will Dickinson</span>
+                <span class="mt-2"
+                    >&copy; {{ new Date().getFullYear() }} Will Dickinson</span
+                >
             </v-col>
         </v-row>
     </v-container>
@@ -138,7 +166,10 @@ export default {
 
         // Get last visit
         const lastVisit = new Date(JSON.parse(localStorage.getItem("@recent")));
-        if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
+        if (
+            !lastVisit ||
+            new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000
+        ) {
             localStorage.setItem("@recent", JSON.stringify(new Date()));
         } else {
             this.recentVisit = true;
@@ -146,7 +177,6 @@ export default {
     },
 };
 </script>
-
 
 <style lang="scss">
 @import "~assets/variables.scss";
