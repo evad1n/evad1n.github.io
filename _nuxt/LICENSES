@@ -12,6 +12,13 @@
 
 
 /*!
+ * vue-typer v1.2.0
+ * Copyright 2016-2017 Chris Nguyen
+ * Released under the MIT license.
+ */
+
+
+/*!
   * vue-router v3.5.3
   * (c) 2021 Evan You
   * @license MIT
@@ -21,11 +28,4 @@
  * Vue.js v2.6.14
  * (c) 2014-2021 Evan You
  * Released under the MIT License.
- */
-
-
-/*!
- * vue-typer v1.2.0
- * Copyright 2016-2017 Chris Nguyen
- * Released under the MIT license.
  */
