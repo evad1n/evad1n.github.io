@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.4",
-    "nuxt-vite": "^0.3.5"
+    "nuxt-vite": "^0.3.5",
+    "sass": "^1.52.3"
   }
 }

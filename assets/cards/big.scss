@@ -1,0 +1,41 @@
+@import '~vuetify/src/styles/settings/_variables';
+
+.card {
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "left right";
+}
+
+.card-left {
+    grid-template-columns: 40% 60%;
+}
+
+.card-right {
+    grid-template-columns: 60% 40%;
+}
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+@media screen and (max-width: #{map-get($grid-breakpoints, 'sm')}) {
+    .card {
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "top"
+            "bot";
+    }
+
+    .img {
+        grid-area: top;
+    }
+
+    .desc {
+        grid-area: bot;
+    }
+}
