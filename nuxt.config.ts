@@ -5,8 +5,28 @@ export default defineNuxtConfig({
     ssr: false,
     target: "static",
 
-    modules: ["nuxt-vite"],
-
+    // Compilation
+    css: ["vuetify/lib/styles/main.sass"],
+    build: {
+        transpile: ["vuetify"],
+    },
+    vite: {
+        define: {
+            "process.env.DEBUG": false,
+        },
+        css: {
+            // https://vitejs.dev/config/#css-preprocessoroptions
+            preprocessorOptions: {
+                scss: {
+                    additionalData: [
+                        // vuetify variable overrides
+                        '@import "@/assets/variables.scss";',
+                        "",
+                    ].join("\n"),
+                },
+            },
+        },
+    },
     typescript: {
         typeCheck: true,
     },
@@ -44,7 +64,6 @@ export default defineNuxtConfig({
             { rel: "shortcut icon", type: "image/x-icon", href: "favicon.ico" },
         ],
     },
-
     generate: {
         fallback: "404.html",
     },

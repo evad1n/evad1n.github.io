@@ -1,15 +1,6 @@
-// Overrides
-$body-font-family: "Courier New", serif;
+@import "vuetify/lib/styles/settings/_variables.scss";
 
 // My variables
 $bg-green: #8bc34a;
 $link: #7a7a7a;
 $link-hover: #fff;
-
-$breakpoints: (
-    "xs": 0,
-    "sm": 600px,
-    "md": 960px,
-    "lg": 1280px,
-    "xl": 1920px,
-);

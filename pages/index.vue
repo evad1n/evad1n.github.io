@@ -1,7 +1,7 @@
 <template>
-    <div id="index-container">
-        <div class="full-height">
-            <div cols="12" class="d-flex flex-column justify-center">
+    <v-container>
+        <v-row class="full-height">
+            <v-col cols="12" class="d-flex flex-column justify-center">
                 <!-- <vue-typer
                     id="header"
                     class="text-center font-weight-regular text-h4 text-sm-h2"
@@ -13,7 +13,7 @@
                     :initialAction="recentVisit ? 'erasing' : 'typing'"
                     caretAnimation="blink"
                 ></vue-typer> -->
-                <div
+                <!-- <div
                     class="icon-bar mx-auto"
                     :style="iconBarStyle"
                     disabled="true"
@@ -34,25 +34,25 @@
                             tooltip: 'LinkedIn',
                         }"
                     />
-                </div>
-            </div>
-        </div>
-        <div id="bio" class="my-4">
-            <div cols="12">
+                </div> -->
+            </v-col>
+        </v-row>
+        <v-row id="bio" class="my-4">
+            <v-col cols="12">
                 <p class="mx-auto text-center h4 ma-0 pa-10">
                     Software engineer with a game design background
                 </p>
-            </div>
-        </div>
-        <div class="my-8 text-h5">
-            <div>
+            </v-col>
+        </v-row>
+        <v-row class="my-8 text-h5">
+            <v-col>
                 <h2 class="mx-auto text-center text-h3 font-weight-bold">
                     Projects
                 </h2>
-            </div>
-        </div>
-        <div class="pb-16">
-            <div
+            </v-col>
+        </v-row>
+        <v-row class="pb-16">
+            <v-col
                 v-for="(project, i) in Projects.big"
                 :key="i"
                 cols="12"
@@ -60,11 +60,11 @@
                 :offset-md="i % 2 == 0 ? 2 : 0"
                 class="big-row"
             >
-                <big-card v-bind="project" :reverse="i % 2 == 0"></big-card>
-            </div>
-        </div>
-        <div class="py-16 justify-center">
-            <div
+                <CardBig v-bind="project" :reverse="i % 2 == 0" />
+            </v-col>
+        </v-row>
+        <v-row class="py-16 justify-center">
+            <v-col
                 v-for="(project, i) in Projects.medium"
                 :key="i"
                 cols="12"
@@ -72,14 +72,11 @@
                 md="4"
                 class="medium-row"
             >
-                <medium-card
-                    v-bind="project"
-                    :reverse="i % 2 == 0"
-                ></medium-card>
-            </div>
-        </div>
-        <div class="py-8 justify-center">
-            <div
+                <CardMedium v-bind="project" :reverse="i % 2 == 0" />
+            </v-col>
+        </v-row>
+        <v-row class="py-8 justify-center">
+            <v-col
                 v-for="(project, i) in Projects.small"
                 :key="i"
                 cols="9"
@@ -88,16 +85,16 @@
                 lg="3"
                 class="small-row"
             >
-                <small-card v-bind="project"></small-card>
-            </div>
-        </div>
-        <div>
-            <div id="all-repositories">
+                <CardSmall v-bind="project" />
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col id="all-repositories">
                 <nuxt-link to="/repositories">All Repositories</nuxt-link>
-            </div>
-        </div>
-        <div class="pb-4">
-            <div cols="12" class="d-flex flex-column align-center pa-0 mt-10">
+            </v-col></v-row
+        >
+        <v-row class="pb-4">
+            <v-col cols="12" class="d-flex flex-column align-center pa-0 mt-10">
                 <span>
                     Made with <a href="https://nuxtjs.org/">Nuxt.js</a> and
                     <a href="https://vuetifyjs.com/en/">Vuetify</a>
@@ -105,9 +102,9 @@
                 <span class="mt-2"
                     >&copy; {{ new Date().getFullYear() }} Will Dickinson</span
                 >
-            </div>
-        </div>
-    </div>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script lang="ts" setup>
@@ -115,6 +112,8 @@
 // import anime from "animejs/lib/anime.es.js";
 
 import { Projects } from "@/static/projects";
+
+console.log(Projects);
 
 // const old = {
 //     projects: projects,
@@ -142,7 +141,6 @@ if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
 </script>
 
 <style lang="scss">
-@import "@/assets/variables.scss";
 .icon-bar {
     opacity: 0;
 }
@@ -176,7 +174,7 @@ if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
     height: 250px;
 }
 
-@media screen and (max-width: #{map-get($breakpoints, 'sm')}) {
+@media screen and (max-width: #{map-get($grid-breakpoints, 'sm')}) {
     .big-row {
         height: 420px;
     }

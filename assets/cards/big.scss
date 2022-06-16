@@ -1,9 +1,8 @@
-@import '~vuetify/src/styles/settings/_variables';
+@import "./card.scss";
 
 .card {
     grid-template-rows: 100%;
-    grid-template-areas:
-        "left right";
+    grid-template-areas: "left right";
 }
 
 .card-left {

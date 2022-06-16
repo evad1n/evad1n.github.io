@@ -1,4 +1,4 @@
-@import '~vuetify/src/styles/settings/_variables';
+@import "./card.scss";
 
 .card {
     grid-template-columns: 100%;
@@ -20,8 +20,7 @@
     .card {
         grid-template-columns: 50% 50%;
         grid-template-rows: 100%;
-        grid-template-areas:
-            "left right";
+        grid-template-areas: "left right";
     }
 
     .left {

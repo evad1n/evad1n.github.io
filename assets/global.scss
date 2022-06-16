@@ -1,5 +1,5 @@
 html {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-weight: 600;
 }
 
@@ -23,7 +23,7 @@ a {
 }
 
 // Particle background
-div[id^='particles-instance-'] {
+div[id^="particles-instance-"] {
     height: 100vh;
     width: 100vw;
     position: fixed;
