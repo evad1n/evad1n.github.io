@@ -3,14 +3,9 @@
         <v-row class="full-height">
             <v-col cols="12" class="d-flex flex-column justify-center">
                 <TypingHeader id="header" text="WILL DICKINSON" />
-                <div
-                    class="icon-bar mx-auto"
-                    :style="iconBarStyle"
-                    disabled="true"
-                >
+                <div class="icon-bar mx-auto">
                     <icon-link
                         v-bind="{
-                            ...iconColors,
                             url: 'https://github.com/evad1n',
                             icon: 'mdi-github',
                             tooltip: 'GitHub',
@@ -18,13 +13,14 @@
                     />
                     <icon-link
                         v-bind="{
-                            ...iconColors,
                             url: 'https://www.linkedin.com/in/will-dickinson/',
                             icon: 'mdi-linkedin',
                             tooltip: 'LinkedIn',
                         }"
                     />
                 </div>
+                <v-btn icon="mdi-linkedin" color="seconday"></v-btn>
+                <span class="material-icons">face</span>
             </v-col>
         </v-row>
         <v-row id="bio" class="my-4">
@@ -137,23 +133,13 @@ if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
 }
 
 .icon-bar {
-    opacity: 0;
+    opacity: 1;
 }
 
 #bio {
     font-size: 1.1rem;
     border-top: 2px solid $link;
     border-bottom: 2px solid $link;
-}
-
-// Vue typer styles
-.vue-typer {
-    font-size: 50px;
-}
-
-.vue-typer .custom.caret {
-    width: 3px;
-    line-height: 50px;
 }
 
 // Row sizes

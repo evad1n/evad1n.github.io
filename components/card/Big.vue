@@ -3,7 +3,7 @@
         class="card"
         :class="classes.reverseGrid"
         elevation="4"
-        color="light-green lighten-2"
+        color="bg-light-green lighten-2"
     >
         <div class="img" :class="classes.reverseClasses[0]">
             <a :class="classes.imageBorders" :href="url">
@@ -50,36 +50,6 @@ const classes = computed(() => {
         reverseGrid: reverse ? "card-left" : "card-right",
     };
 });
-
-// export default {
-//     props: {
-//         title: String,
-//         url: String,
-//         mediaPath: String,
-//         description: String,
-//         tools: Array,
-//         reverse: Boolean,
-//     },
-//     computed: {
-//         imageBorders() {
-//             switch (this.$vuetify.breakpoint.name) {
-//                 case "xs":
-//                     return "top-image";
-//                 default:
-//                     return this.reverse ? "left-image" : "right-image";
-//             }
-//         },
-//         imgPath() {
-//             return `/${this.mediaPath}`;
-//         },
-//         reverseClasses() {
-//             return this.reverse ? ["left", "right"] : ["right", "left"];
-//         },
-//         reverseGrid() {
-//             return this.reverse ? "card-left" : "card-right";
-//         },
-//     },
-// };
 </script>
 
 <style lang="scss" scoped>

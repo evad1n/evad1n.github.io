@@ -1,32 +1,34 @@
 <template>
-    <v-tooltip bottom :color="tipColor">
-        <template v-slot:activator="{ on, attrs }">
-            <v-btn icon :href="url" v-bind="attrs" v-on="on">
-                <v-hover v-model="hovered">
-                    <v-icon x-large :color="hovered ? hoverColor : baseColor">{{ icon }}</v-icon>
-                </v-hover>
-            </v-btn>
-        </template>
-        <span class="font-weight-regular">{{ tooltip }}</span>
-    </v-tooltip>
+    <v-btn :icon="props.icon" :href="props.url" variant="text">
+        <v-hover #default="{ hovered }">
+            <!-- <v-icon size="x-large" :icon="props.icon" /> -->
+            <span v-show="hovered" class="font-weight-regular">{{
+                props.tooltip
+            }}</span>
+        </v-hover>
+    </v-btn>
 </template>
 
-<script>
-export default {
-    props: {
-        baseColor: String,
-        hoverColor: String,
-        tipColor: String,
-        url: String,
-        icon: String,
-        tooltip: String
+<script setup lang="ts">
+const props = defineProps({
+    baseColor: String,
+    hoverColor: String,
+    tipColor: String,
+    url: {
+        type: String,
+        required: true,
     },
-    data() {
-        return {
-            hovered: false
-        };
-    }
-};
+    icon: {
+        type: String,
+        required: true,
+    },
+    tooltip: {
+        type: String,
+        required: true,
+    },
+});
+
+console.log(props);
 </script>
 
 <style lang="scss" scoped>
