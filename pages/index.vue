@@ -2,18 +2,8 @@
     <v-container>
         <v-row class="full-height">
             <v-col cols="12" class="d-flex flex-column justify-center">
-                <!-- <vue-typer
-                    id="header"
-                    class="text-center font-weight-regular text-h4 text-sm-h2"
-                    text="WILL DICKINSON"
-                    @completed="iconsReady"
-                    :pre-type-delay="1000"
-                    :type-delay="90"
-                    :repeat="0"
-                    :initialAction="recentVisit ? 'erasing' : 'typing'"
-                    caretAnimation="blink"
-                ></vue-typer> -->
-                <!-- <div
+                <TypingHeader id="header" text="WILL DICKINSON" />
+                <div
                     class="icon-bar mx-auto"
                     :style="iconBarStyle"
                     disabled="true"
@@ -34,7 +24,7 @@
                             tooltip: 'LinkedIn',
                         }"
                     />
-                </div> -->
+                </div>
             </v-col>
         </v-row>
         <v-row id="bio" class="my-4">
@@ -107,8 +97,7 @@
     </v-container>
 </template>
 
-<script lang="ts" setup>
-// import { VueTyper } from "vue-typer";
+<script setup lang="ts">
 // import anime from "animejs/lib/anime.es.js";
 
 import { Projects } from "@/static/projects";
@@ -140,7 +129,13 @@ if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+#header {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+}
+
 .icon-bar {
     opacity: 0;
 }
@@ -175,6 +170,9 @@ if (!lastVisit || new Date() - lastVisit > HOUR_TIMEOUT * 60 * 60 * 1000) {
 }
 
 @media screen and (max-width: #{map-get($grid-breakpoints, 'sm')}) {
+    #header {
+        font-size: 2rem;
+    }
     .big-row {
         height: 420px;
     }

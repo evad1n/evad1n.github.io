@@ -6,7 +6,11 @@ export default defineNuxtConfig({
     target: "static",
 
     // Compilation
-    css: ["vuetify/lib/styles/main.sass"],
+    css: [
+        "vuetify/lib/styles/main.sass",
+        "mdi/css/materialdesignicons.min.css",
+        "@/assets/global.scss",
+    ],
     build: {
         transpile: ["vuetify"],
     },

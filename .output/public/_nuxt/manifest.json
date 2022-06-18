@@ -1,0 +1,30 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-9c927c95.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "dynamicImports": [
+      "pages/index.vue",
+      "pages/repositories.vue"
+    ],
+    "css": [
+      "entry.0e659d1a.css"
+    ]
+  },
+  "pages/index.vue": {
+    "file": "index-e38dfdbd.mjs",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/repositories.vue": {
+    "file": "repositories-98ce1e2d.mjs",
+    "src": "pages/repositories.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  }
+}

@@ -3,8 +3,8 @@ html {
     font-weight: 600;
 }
 
-.v-application {
-    background-color: rgba($color: #ff9393, $alpha: 0) !important;
+body {
+    background-color: $bg-green-light;
 }
 
 // Links
